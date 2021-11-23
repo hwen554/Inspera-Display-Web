@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>INSPERA</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+
+
+<body onload="showTime()" id="body">
+    <header>
+        <h1>INSPERA COMPSCI 210 EXAM</h1>
+        <h2>HONG WENG</h2>
+        <h3 id="time"></h3>
+
+    </header>
+
+    <section class="container">
+        <form id="my-form">
+            <h1 class='login'>The University of Auckland</h1>
+            <div class="msg"></div>
+            <div>
+                <label for="name"></label>
+                <input type="text" id="name" placeholder="Email or University username">
+            </div>
+            <div>
+                <label for="email"></label>
+                <input type="text" id="email" placeholder="Password">
+            </div>
+            <div>
+                <label>Background</label>
+                <select class='label' name="background" id="background" onchange="changebackground(this)">
+                    <option value="red">red</option>
+                    <option value="blue">blue</option>
+                    <option value="green">green</option>
+                    <option value="yellow">yellow</option>
+                </select>
+            </div>
+            <input class="btn" type="submit" value="Sign in">
+        </form>
+
+        <ul id="users"></ul>
+
+        <!-- <ul class="items">
+        <li class="item">Item 1</li>
+        <li class="item">Item 2</li>
+        <li class="item">Item 3</li>
+      </ul> -->
+    </section>
+
+
+    <script>
+        function showTime() {
+            var time = document.getElementById('time');
+            time.innerHTML = Date();
+        }
+
+        function clearTime() {
+            var time = document.getElementById('time');
+            time.innerHTML = '';
+        }
+
+        function changebackground(e) {
+            console.log(e.value);
+            var body = document.getElementById('body');
+            body.style.backgroundColor = e.value;
+        }
+    </script>
+</body>
+
+</html>
